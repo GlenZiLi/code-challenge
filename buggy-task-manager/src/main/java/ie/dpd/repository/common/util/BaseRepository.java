@@ -9,7 +9,7 @@ import java.sql.SQLException;
 /**
  * @Author ZI LI
  * @Date 2025/10/2 8:32
- * @comment we could do more extent in the furture
+ * @comment we could do more extent in the future
  */
 public class BaseRepository {
     @Resource(name = "TaskDB")
