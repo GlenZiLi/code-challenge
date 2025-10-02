@@ -28,6 +28,13 @@ public class SummaryRepository extends BaseRepository {
     }
 
     // Calculate current stats from tasks table
+    // could do in the same sql but will not return the data
+  /*  String sql = "INSERT INTO task_summaries (completed_count, pending_count, total_tasks) " +
+            "SELECT " +
+            "SUM(CASE WHEN completed = TRUE THEN 1 ELSE 0 END), " +
+            "SUM(CASE WHEN completed = FALSE THEN 1 ELSE 0 END), " +
+            "COUNT(*) " +
+            "FROM tasks";*/
     private TaskSummary fetchCurrentStats() throws SQLException {
         String sql = "SELECT " +
                 "SUM(CASE WHEN completed = TRUE THEN 1 ELSE 0 END) AS completed_count, " +
